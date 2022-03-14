@@ -1,0 +1,30 @@
+export enum TaskTypes {
+  REQUEST_ALL_TASKS_CALL = "REQUEST_ALL_TASKS_CALL",
+  REQUEST_ALL_TASKS_CALL_SUCCESS = "REQUEST_ALL_TASKS_CALL_SUCCESS",
+
+  REQUEST_CREATE_TASK_CALL = "REQUEST_CREATE_TASK_CALL",
+  REQUEST_CREATE_TASK_CALL_SUCCESS = "REQUEST_CREATE_TASK_CALL_SUCCESS",
+
+  REQUEST_DELETE_TASK_CALL = "REQUEST_DELETE_TASK_CALL",
+  REQUEST_DELETE_TASK_CALL_SUCCESS = "REQUEST_DELETE_TASK_CALL_SUCCESS",
+
+  REQUEST_UPDATE_TASKS_CALL = "REQUEST_UPDATE_TASKS_CALL",
+  REQUEST_UPDATE_TASKS_CALL_SUCCESS = "REQUEST_UPDATE_TASKS_CALL_SUCCESS",
+}
+export interface TaskProps {
+  id: string;
+  title: string;
+  createdAt: string;
+  completed: boolean;
+}
+
+export type TaskState = {
+  tasks: TaskProps[];
+};
+
+export type taskAction = {
+  type: TaskTypes.REQUEST_ALL_TASKS_CALL_SUCCESS;
+  payload: TaskProps[];
+};
+
+export type TaskActions = taskAction;
