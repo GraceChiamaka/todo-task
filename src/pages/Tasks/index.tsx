@@ -24,9 +24,11 @@ export const Tasks = () => {
   const onError = (error: any) => {
     console.log(error);
   };
-
   const resetStatus = () => {
     setstatus({ type: "", msg: "" });
+  };
+  const updateStatus: { (type: string, msg: string): void } = (type, msg) => {
+    setstatus({ type: type, msg: msg });
   };
 
   return (
@@ -39,7 +41,7 @@ export const Tasks = () => {
         {status && status.type === "success" && (
           <Alert type="success" msg={status.msg} close={resetStatus} />
         )}
-        <CreateTask />
+        <CreateTask updateStatus={updateStatus} />
         <TaskContainer>
           {tasks &&
             (tasks?.length === 0 ? (
@@ -52,6 +54,7 @@ export const Tasks = () => {
                     key={id}
                     id={id}
                     completed={completed}
+                    updateStatus={updateStatus}
                   />
                 );
               })

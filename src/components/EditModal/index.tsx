@@ -17,7 +17,7 @@ type EditModalProps = {
     completed: boolean;
   };
   taskId: string;
-  updateStatus?: (value: { type: "error" | "success"; msg: string }) => void;
+  updateStatus?: (type, msg) => void;
 };
 
 export const EditModal: FC<EditModalProps> = ({
@@ -36,7 +36,6 @@ export const EditModal: FC<EditModalProps> = ({
   const handleEdit = (ev) => {
     ev.preventDefault();
     setIsSubmitting(true);
-    console.log(editFormDetails);
     dispatch(
       action(
         TaskTypes.REQUEST_UPDATE_TASKS_CALL,
@@ -49,18 +48,21 @@ export const EditModal: FC<EditModalProps> = ({
 
   const onSuccess = (data) => {
     setIsSubmitting(false);
+    setEditFormDetails({
+      title: initialValues.title,
+      completed: initialValues.completed,
+    });
     hide();
   };
   const onError = (error) => {
     setIsSubmitting(false);
-    updateStatus({ type: "error", msg: error });
+    updateStatus("error", error);
   };
 
   const handleChange = (ev) => {
     const {
       target: { value, checked, type, name },
     } = ev;
-    console.log(type, "[==", checked);
     if (type === "checkbox") {
       setEditFormDetails({ ...editFormDetails, [name]: checked });
     } else {
@@ -108,5 +110,3 @@ export const EditModal: FC<EditModalProps> = ({
     </ModalContainer>
   );
 };
-
-//  ${({theme}) => theme.};

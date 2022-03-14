@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useDispatch } from "react-redux";
 import { CreateTaskContainer } from "./style";
 import { TaskTypes } from "../../store/types/tasks";
 import { action } from "typesafe-actions";
 
-export const CreateTask = () => {
+type CreateProps = {
+  updateStatus: (type: string, msg: string) => void;
+};
+
+export const CreateTask: FC<CreateProps> = ({ updateStatus }) => {
   const [title, setTitle] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const dispatch = useDispatch();
@@ -25,10 +29,11 @@ export const CreateTask = () => {
 
   const onSuccess = (data) => {
     setIsSubmitting(false);
+    setTitle("");
   };
   const onError = (error) => {
-    console.log(error);
     setIsSubmitting(false);
+    updateStatus("error", error);
   };
 
   return (
