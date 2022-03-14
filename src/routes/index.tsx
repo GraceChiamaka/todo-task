@@ -8,7 +8,6 @@ export const Router = () => {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/tasks" element={<Tasks />} />
-        <Route path="/tasks/:id" element={<Tasks />} />
       </Routes>
     </BrowserRouter>
   );
