@@ -41,10 +41,10 @@ export const Tasks = () => {
         )}
         <CreateTask />
         <TaskContainer>
-          {tasks.length === 0 ? (
+          {tasks?.length === 0 ? (
             <p>No Tasks Created yet!</p>
           ) : (
-            tasks.map(({ id, title, completed }) => {
+            tasks?.map(({ id, title, completed }) => {
               return (
                 <ViewTask
                   title={title}
