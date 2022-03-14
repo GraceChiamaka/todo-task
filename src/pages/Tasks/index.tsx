@@ -41,20 +41,21 @@ export const Tasks = () => {
         )}
         <CreateTask />
         <TaskContainer>
-          {tasks?.length === 0 ? (
-            <p>No Tasks Created yet!</p>
-          ) : (
-            tasks?.map(({ id, title, completed }) => {
-              return (
-                <ViewTask
-                  title={title}
-                  key={id}
-                  id={id}
-                  completed={completed}
-                />
-              );
-            })
-          )}
+          {tasks &&
+            (tasks?.length === 0 ? (
+              <p>No Tasks Created yet!</p>
+            ) : (
+              tasks?.map(({ id, title, completed }) => {
+                return (
+                  <ViewTask
+                    title={title}
+                    key={id}
+                    id={id}
+                    completed={completed}
+                  />
+                );
+              })
+            ))}
         </TaskContainer>
       </Container>
     </>
