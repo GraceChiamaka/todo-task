@@ -9,7 +9,7 @@ export const Container = styled.header`
     font-size: ${({ theme }) => theme.fontSize?.hero};
   }
   p {
-    color: ${({ theme }) => theme.colors?.primary[300]};
+    color: ${({ theme }) => theme.colors?.primary[200]};
   }
   ${({ theme }) => theme.media?.tablet} {
     width: 100%;

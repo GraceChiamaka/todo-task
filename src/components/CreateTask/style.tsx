@@ -4,7 +4,7 @@ export const CreateTaskContainer = styled.form`
   display: flex;
   margin-bottom: 24px;
   gap: 12px;
-  font-family: ${({ theme }) => theme.fontFamily?.AvenirBlack};
+  font-family: ${({ theme }) => theme.fontFamily?.avenirBlack};
   margin-bottom: ${({ theme }) => theme.spacing?.custom(80)};
   input {
     width: 100%;

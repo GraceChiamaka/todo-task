@@ -90,7 +90,7 @@ export const EditModal: FC<EditModalProps> = ({
               name="completed"
               checked={editFormDetails.completed}
               onChange={handleChange}
-            />
+            />{" "}
             Completed
           </FormItem>
           <FormBtnContainer>

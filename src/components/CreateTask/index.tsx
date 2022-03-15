@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { useDispatch } from "react-redux";
 import { CreateTaskContainer } from "./style";
-import { TaskTypes } from "../../store/types/tasks";
+import { TaskTypes } from "@src/store/types/tasks";
 import { action } from "typesafe-actions";
 
 type CreateProps = {
