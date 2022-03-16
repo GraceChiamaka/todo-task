@@ -7,7 +7,7 @@ import {
 import { action } from "typesafe-actions";
 import { TaskTypes } from "../../store/types/tasks";
 import { useDispatch } from "react-redux";
-import { FC, useState } from "react";
+import React, { FC, useState } from "react";
 import { Input } from "../General";
 
 type EditModalProps = {

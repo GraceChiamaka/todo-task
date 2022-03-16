@@ -1,5 +1,6 @@
+import React from "react";
 import { Container, ButtonContainer, GetStartedBtn } from "./style";
-import { Header } from "@src/components";
+import { Header } from "../index";
 import Link from "next/link";
 
 export const Homepage = () => {

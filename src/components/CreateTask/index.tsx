@@ -1,7 +1,7 @@
-import { FC, useState } from "react";
+import React, { FC, useState } from "react";
 import { useDispatch } from "react-redux";
 import { CreateTaskContainer } from "./style";
-import { TaskTypes } from "@src/store/types/tasks";
+import { TaskTypes } from "../../store/types/tasks";
 import { action } from "typesafe-actions";
 
 type CreateProps = {
@@ -44,6 +44,7 @@ export const CreateTask: FC<CreateProps> = ({ updateStatus }) => {
         value={title}
         onChange={({ target: { value } }) => setTitle(value)}
         required={true}
+        data-testd="create-task-input"
       />
       <button disabled={isSubmitting}>
         {isSubmitting ? "submitting..." : "Add"}

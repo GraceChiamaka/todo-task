@@ -7,7 +7,7 @@ import {
   useSelector as useReduxSelector,
   TypedUseSelectorHook,
 } from "react-redux";
-import { rootReducer } from "@store/reducers";
+import { rootReducer } from "./reducers";
 import { rootSaga } from "./sagas";
 
 const sagaMiddleware = createSagaMiddleware();
@@ -23,7 +23,7 @@ const bindMiddleware = (middleware) => {
   return applyMiddleware(...middleware);
 };
 
-const makeStore = ({ isServer }: any) => {
+export const makeStore = ({ isServer }: any) => {
   if (isServer) {
     //If it's on server side, create a store
     return createStore(rootReducer, bindMiddleware([sagaMiddleware]));

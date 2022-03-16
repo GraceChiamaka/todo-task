@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import React, { FC, useState } from "react";
 import { Container, ActionContainer } from "./style";
 import { action } from "typesafe-actions";
 import { TaskTypes } from "../../store/types/tasks";

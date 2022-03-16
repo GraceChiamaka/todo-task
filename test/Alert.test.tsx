@@ -1,5 +1,6 @@
+import React from "react";
 import { render } from "@testing-library/react";
-import { Alert } from "@components/General";
+import { Alert } from "../src/components/General";
 
 test("renders alert component", () => {
   render(
